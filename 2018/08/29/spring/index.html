@@ -15,12 +15,13 @@
 
 
 
-<meta name="description" content="Spring框架总结 Title:  title  Spring框架入门（1）date：    2018-8-29 9:22tags：    spring框架,开源框架categories：JavaEE  1.0 spring简介 1.0  Spring 是一个企业级开发框架，为简化企业级项目开发而创建，框架的主要优势">
+<meta name="description" content="spring入门">
+<meta name="keywords" content="spring框架,开源框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="马克图布！">
-<meta property="og:url" content="http://yoursite.com/2018/08/28/spring/index.html">
+<meta property="og:title" content="Spring框架入门（1）">
+<meta property="og:url" content="http://yoursite.com/2018/08/29/spring/index.html">
 <meta property="og:site_name" content="马克图布！">
-<meta property="og:description" content="Spring框架总结 Title:  title  Spring框架入门（1）date：    2018-8-29 9:22tags：    spring框架,开源框架categories：JavaEE  1.0 spring简介 1.0  Spring 是一个企业级开发框架，为简化企业级项目开发而创建，框架的主要优势之一就是分层架构，允许开发者自主选择组件。  Spring的两大核心机制就是 I">
+<meta property="og:description" content="spring入门">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/t4kgaKYXPLexsDu1uv0NHlYnnW90Fq0l4CA6Bb7IbRTrDeDoCT58DGIQ9BH2ibKewbez7JGMrRGqib6OIzibJASlQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1">
 <meta property="og:image" content="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
@@ -36,10 +37,10 @@
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/t4kgaKYXPLdrtoibY9DbnfVss0EsRuVKtyO9X1JsTEcIcyRIibNy7ib254apm3krJVe8SEUib27jpO0VUY89iaBny1w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1">
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/t4kgaKYXPLdrtoibY9DbnfVss0EsRuVKtywMP11oSvsficuicg82nxEsxv44jJ9wBbbVVQ60UP0ZnFV25UMiaFlc1Q/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1">
 <meta property="og:image" content="c:/Users/ADMINI~1/AppData/Local/Temp/1529581617532.png">
-<meta property="og:updated_time" content="2018-08-29T03:38:12.412Z">
+<meta property="og:updated_time" content="2018-08-29T04:44:43.110Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="马克图布！">
-<meta name="twitter:description" content="Spring框架总结 Title:  title  Spring框架入门（1）date：    2018-8-29 9:22tags：    spring框架,开源框架categories：JavaEE  1.0 spring简介 1.0  Spring 是一个企业级开发框架，为简化企业级项目开发而创建，框架的主要优势之一就是分层架构，允许开发者自主选择组件。  Spring的两大核心机制就是 I">
+<meta name="twitter:title" content="Spring框架入门（1）">
+<meta name="twitter:description" content="spring入门">
 <meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_png/t4kgaKYXPLexsDu1uv0NHlYnnW90Fq0l4CA6Bb7IbRTrDeDoCT58DGIQ9BH2ibKewbez7JGMrRGqib6OIzibJASlQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -72,7 +73,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>马克图布！</title>
+<title>Spring框架入门（1） | 马克图布！</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -207,7 +208,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端-js/">-前端 -js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具-Hbuilder/">工具  -Hbuilder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/应用-前端工具/">应用  前端工具</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端-js/">-前端 -js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring框架/">spring框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具-Hbuilder/">工具  -Hbuilder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/应用-前端工具/">应用  前端工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源框架/">开源框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/流程/">流程</a></li></ul>
                     </div>
                 </section>
                 
@@ -293,8 +294,8 @@
       <div class="body-wrap"><article id="post-spring" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/08/28/spring/" class="article-date">
-      <time datetime="2018-08-28T01:48:20.423Z" itemprop="datePublished">2018-08-28</time>
+      <a href="/2018/08/29/spring/" class="article-date">
+      <time datetime="2018-08-29T01:22:59.000Z" itemprop="datePublished">2018-08-29</time>
 </a>
 
 
@@ -305,13 +306,36 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Spring框架入门（1）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JavaEE/">JavaEE</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring框架/">spring框架</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开源框架/">开源框架</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Spring框架总结"><a href="#Spring框架总结" class="headerlink" title="Spring框架总结"></a>Spring框架总结</h2><hr>
-<p>Title:  title  Spring框架入门（1）<br>date：    2018-8-29 9:22<br>tags：    spring框架,开源框架<br>categories：JavaEE</p>
-<hr>
-<h2 id="1-0-spring简介"><a href="#1-0-spring简介" class="headerlink" title="1.0 spring简介"></a>1.0 spring简介</h2><p> 1.0  Spring 是一个企业级开发框架，为简化企业级项目开发而创建，框架的主要优势之一就是分层架构，允许开发者自主选择组件。</p>
+        <h2 id="Spring框架总结"><a href="#Spring框架总结" class="headerlink" title="Spring框架总结"></a>Spring框架总结</h2><h2 id="1-0-spring简介"><a href="#1-0-spring简介" class="headerlink" title="1.0 spring简介"></a>1.0 spring简介</h2><p> 1.0  Spring 是一个企业级开发框架，为简化企业级项目开发而创建，框架的主要优势之一就是分层架构，允许开发者自主选择组件。</p>
 <p> <strong>Spring的两大核心机制就是 IOC  和  AOP</strong></p>
 <p>从开发角度上来说，使用Spring就是使用它的IOC和AOP。</p>
 <blockquote>
@@ -975,13 +999,13 @@ LoginDao dao = new LoginDaoImpl2();
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/08/28/spring/"></a></p>
+        <p><span>本文标题:</span><a href="/2018/08/29/spring/">Spring框架入门（1）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Hide it away</a></p>
-        <p><span>发布时间:</span>2018-08-28, 09:48:20</p>
-        <p><span>最后更新:</span>2018-08-29, 11:38:12</p>
+        <p><span>发布时间:</span>2018-08-29, 09:22:59</p>
+        <p><span>最后更新:</span>2018-08-29, 12:44:43</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/08/28/spring/" title="">http://yoursite.com/2018/08/28/spring/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/28/spring/　　作者: Hide it away" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/29/spring/" title="Spring框架入门（1）">http://yoursite.com/2018/08/29/spring/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/29/spring/　　作者: Hide it away" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -992,6 +1016,12 @@ LoginDao dao = new LoginDaoImpl2();
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/08/29/hexo上传流程/">
+                    Hexo简单实用（1）
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -1044,7 +1074,7 @@ LoginDao dao = new LoginDaoImpl2();
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"　| 马克图布！　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Spring框架入门（1）　| 马克图布！　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -1063,8 +1093,8 @@ LoginDao dao = new LoginDaoImpl2();
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://yoursite.com/2018/08/28/spring/';
-            this.page.identifier = '2018/08/28/spring/';
+            this.page.url = 'http://yoursite.com/2018/08/29/spring/';
+            this.page.identifier = '2018/08/29/spring/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -1086,7 +1116,9 @@ LoginDao dao = new LoginDaoImpl2();
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2018/08/29/hexo上传流程/" title="上一篇: Hexo简单实用（1）">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -1098,7 +1130,7 @@ LoginDao dao = new LoginDaoImpl2();
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/28/spring/">spring</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/h5/">h5</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/MySQL笔记/">MySQL极简</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/markdown语法/">markdown 语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/JavaScript标记/">前端 简单笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/hexo和yelee主题使用/">hexo和yelee主题的使用笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/Hbuilder使用技巧/">Hbuilder使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/29/hexo上传流程/">Hexo简单实用（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/29/spring/">Spring框架入门（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/h5/">h5</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/MySQL笔记/">MySQL极简</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/markdown语法/">markdown 语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/JavaScript标记/">前端 简单笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/hexo和yelee主题使用/">hexo和yelee主题的使用笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/Hbuilder使用技巧/">Hbuilder使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/hello-world/">Hello World</a></li></ul>
 
 
 
