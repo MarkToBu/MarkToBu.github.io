@@ -174,7 +174,7 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/">主页</a></li>
+                            <li><a href="/archives/">主页</a></li>
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
@@ -257,7 +257,7 @@
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/">主页</a></li>
+                    <li><a href="/archives/">主页</a></li>
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
@@ -1186,7 +1186,7 @@ LoginDao dao = new LoginDaoImpl2();
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 2;
+                var backgroundnum = 4;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
@@ -1209,8 +1209,8 @@ LoginDao dao = new LoginDaoImpl2();
              github: ".github-widget a", 
             
             
-            
-            
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
             
              archives: ".archive-article-title", 
              miniArchives: "a.post-list-link", 
