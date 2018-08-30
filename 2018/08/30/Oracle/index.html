@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Hide it away" />
+
+
+
+<meta name="description" content="spring入门">
+<meta name="keywords" content="Oracle,常用数据库,DB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle入门（1）">
+<meta property="og:url" content="http://yoursite.com/2018/08/30/Oracle/index.html">
+<meta property="og:site_name" content="马克图布！">
+<meta property="og:description" content="spring入门">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-30T06:17:23.120Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Oracle入门（1）">
+<meta name="twitter:description" content="spring入门">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="马克图布！" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/silver/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Oracle入门（1） | 马克图布！</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: 
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Hide it away</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/随笔/">随笔</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:632318927@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="https://weibo.com/u/5317910567/home" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/TheBestLife" title="GitHub"></a>
+                            
+                                <a class="fa V2EX" href="https://www.v2ex.com/member/TwistedFate" title="V2EX"></a>
+                            
+                                <a class="fa 知乎" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa 网易云音乐" href="http://music.163.com/#/user/home?id=372823067" title="网易云音乐"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端-js/">-前端 -js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring框架/">spring框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具-Hbuilder/">工具  -Hbuilder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用数据库/">常用数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/应用-前端工具/">应用  前端工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源框架/">开源框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/流程/">流程</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">小白猿</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Hide it away</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Hide it away</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/随笔/">随笔</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:632318927@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="https://weibo.com/u/5317910567/home" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/TheBestLife" title="GitHub"></a>
+                            
+                                <a class="fa V2EX" target="_blank" href="https://www.v2ex.com/member/TwistedFate" title="V2EX"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=372823067" title="网易云音乐"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Oracle" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/30/Oracle/" class="article-date">
+      <time datetime="2018-08-30T05:20:20.000Z" itemprop="datePublished">2018-08-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Oracle入门（1）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/DB/">DB</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DB/">DB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/常用数据库/">常用数据库</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="Oracle总结"><a href="#Oracle总结" class="headerlink" title="Oracle总结"></a>Oracle总结</h1><h2 id="1-安装和卸载"><a href="#1-安装和卸载" class="headerlink" title="1.   安装和卸载"></a>1.   安装和卸载</h2><ul>
+<li><p>简介</p>
+<p>oracle  神谕  他的第一个客户=&gt;CIA<br>sqlplus = 让我们和oracle数据库进行交流</p>
+<p>SQL = Structured Query Language =&gt; 结构化查询语言</p>
+<p>DDL DML DQL DCL TCL</p>
+<p>DDL =&gt; Data Defination Language =&gt; 数据定义语言<br>create 创建  alter 修改  drop 扔掉  truncate 截断</p>
+<p>DML =&gt; Data Manipulation Language =&gt; 数据操纵语言<br>insert 新建  delete 删除  update 修改</p>
+<p>DQL =&gt; Data Query Language =&gt; 数据查询语言<br>query  查询</p>
+<p>DCL =&gt; Data Control Language =&gt; 数据控制语言<br>grant 授权  revoke 撤销授权</p>
+<p>TCL =&gt; Transaction Control Language =&gt; 事务控制语言<br>commit 提交  rollback 回滚  savepoint 保存还原点</p>
+</li>
+<li><p>安装</p>
+<ul>
+<li>基本上以下一步为主，注意记录安装位置和选择用户和输入口令</li>
+</ul>
+<p>如何解锁一个账户：<br> alter user scott account unlock;<br>如何锁定一个账户：<br> alter user scott account lock;<br>如何修改一个账户的密码：<br> alter user scott identified by etoak;<br>如何创建一个新账户：<br> create user et1803 identified by et1803;<br>如何给用户授权：<br> grant dba to scott;<br>如何给用户撤销授权：<br> revoke dba from scott;<br>如何删除用户：<br>drop user aa;<br>如何切换用户：<br>conn 用户名/密码<br>查看当前用户：<br>show user</p>
+</li>
+<li><p>暴力卸载</p>
+<blockquote>
+<p>1.运行regedit  打开注册表删除所有关于oracle的相关服务<br>   HKEY_LOCAL_MACHINE</p>
+<pre><code>SYSTEM
+ ControlSet001
+    Services
+      Oracle****全部删掉
+</code></pre><p>2.重启  所有的oracle服务已经不再windows加载</p>
+<p>3.删除oracle对应的文件<br> a&gt; app目录  = oracle的主目录<br> b&gt; C:\Program Files\Oracle</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="2-sql语句"><a href="#2-sql语句" class="headerlink" title="2. sql语句"></a>2. sql语句</h2><ol>
+<li><p>oracle的数据类型</p>
+<p>字符型     char(10)        定长              0-2000      char(1)  =&gt; 1  | 2</p>
+<p>​               varchar2(10)   可变长度     0-4000</p>
+<p> 数值型   number(7,2)    </p>
+<p>日期型    date</p>
+<p>​               timestamp     时间戳 （包含毫秒数）</p>
+</li>
+<li><p>如何创建一张表</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">   <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">   birthday <span class="built_in">date</span>,</span><br><span class="line">   salary <span class="built_in">number</span>(<span class="number">5</span>,<span class="number">-2</span>)</span><br><span class="line"> );</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看已经存在的表结构</p>
+</li>
+</ol>
+<p>​     desc student;</p>
+<h3 id="4-修改表名，字段名"><a href="#4-修改表名，字段名" class="headerlink" title="4. 修改表名，字段名"></a>4. <strong>修改表名，字段名</strong></h3>   <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">rename</span> <span class="keyword">to</span> teacher;</span><br><span class="line">建表以后 增加字段</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">add</span> email varchar2(<span class="number">20</span>);</span><br><span class="line">建表以后 修改字段名</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">rename</span> <span class="keyword">column</span> email <span class="keyword">to</span> youxiang;</span><br><span class="line">建表以后 修改字段数据类型</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">modify</span> <span class="keyword">name</span> varchar2(<span class="number">10</span>);</span><br><span class="line">建表以后 删除字段</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">drop</span> <span class="keyword">column</span> youxiang;</span><br><span class="line">建表以后 删除表</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> student <span class="keyword">purge</span>;</span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> student;</span><br></pre></td></tr></table></figure>
+<h3 id="5-增删改查数据"><a href="#5-增删改查数据" class="headerlink" title="5. 增删改查数据"></a>5. <strong>增删改查数据</strong></h3><ul>
+<li><p>逃离符,  模糊查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">插入一条数据</span><br><span class="line">1：</span><br><span class="line">insert into student(name,salary,birthday)</span><br><span class="line">values(&apos;xiaowang&apos;,123.45,sysdate);</span><br><span class="line">2:</span><br><span class="line">insert into student values(&apos;xiaohong&apos;,456.12,sysdate);</span><br><span class="line">修改数据</span><br><span class="line">update student set name = &apos;xiaogang&apos;;</span><br><span class="line"></span><br><span class="line">update student set name = &apos;xiaoxin&apos; where name = &apos;xiaowang&apos;;</span><br><span class="line"></span><br><span class="line">update student set name = &apos;xiaobai&apos;,salary = salary + 200</span><br><span class="line">where name = &apos;xiaoxin&apos;;</span><br><span class="line"></span><br><span class="line">删除数据</span><br><span class="line">delete from student where name = &apos;xiaoxin&apos;;</span><br><span class="line"></span><br><span class="line">查询数据</span><br><span class="line">select * from student;</span><br><span class="line">select name,salary from student;</span><br><span class="line"></span><br><span class="line">like:</span><br><span class="line">%:代表任意位的任意字符  </span><br><span class="line">_:代表一位上的任意字符</span><br><span class="line">select * from student where name like &apos;%gx%&apos;;</span><br><span class="line"></span><br><span class="line">escape:逃离符</span><br><span class="line">通过指定一个字符位逃离，来保证like之后的字符串中出现的</span><br><span class="line">字符看作是普通字符</span><br><span class="line"> select * from student where name like &apos;xiao,_%&apos; escape &apos;,&apos;;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>运算符</li>
+</ol>
+<p>算术： +  -   *   /  mod(x,y);   <!-- 取余数 --></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select mod(14,5) form dual;</span><br></pre></td></tr></table></figure>
+<p>关系比较： &gt;  &lt;   &gt;=     &lt;=  =  !=</p>
+<blockquote>
+<p>注意   &lt;&gt;  是不等于的标准语法，可以移植到其他任何平台，（推荐使用）</p>
+</blockquote>
+<p>​     条件:      and   or    [ between     and ]         //不解释</p>
+<p>与空判断：</p>
+<p>​     is null;                  is not null;         //字面意思</p>
+</li>
+</ul>
+<hr>
+<p>   ​</p>
+<h3 id="7-多行函数"><a href="#7-多行函数" class="headerlink" title="7. 多行函数"></a>7. <strong>多行函数</strong></h3><p>   count()                   sum()                           avg()                max()                  min()</p>
+<p>   //不解释，上语句</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1.查看当前表有多少条记录</span><br><span class="line">select count(*) from student;</span><br><span class="line">select count(email) from student;</span><br><span class="line">2.统计某个字段的和</span><br><span class="line">select sum(salary) from student;</span><br><span class="line">3.求平均数</span><br><span class="line">select avg(salary) from student;</span><br><span class="line">4.求最大值</span><br><span class="line"> select max(salary) from student;</span><br><span class="line">5.求最小值</span><br><span class="line"> select min(salary) from student;</span><br></pre></td></tr></table></figure>
+<h3 id="8-单行函数"><a href="#8-单行函数" class="headerlink" title="8. 单行函数"></a>8. 单行函数</h3><p>   ceil()：返回大于等于x的最小整数<br>   floor()：返回小于等于x的最大整数<br>   select floor(11.1) from dual;</p>
+<p>   round()：四舍五入<br>   round(a1,a2)  保留指定位小数位的四舍五入<br>   select round(3.141592653,3) from dual;</p>
+<p>   trunc()：直接截断<br>   trunc(a1,a2)：保留指定位数的小数<br>   select trunc(3.141592653,3) from dual;</p>
+<p>   sign()：求符号位   正数：1  负数：-1  零返回0<br>   select sign(-888) from dual;</p>
+<p>   abs()：求绝对值<br>   select abs(-888) from dual;</p>
+<p>   power(a,b)：求a的b次方<br>   select power(2,3) from dual;</p>
+<p>   sqrt()：求正平方根<br>    select sqrt(16) from dual;</p>
+<p>   ​    </p>
+<h3 id="9-转换函数"><a href="#9-转换函数" class="headerlink" title="9. 转换函数"></a>9. 转换函数</h3><p>   to_number(C)：将一个字符类型的数字变成数值类型<br>   select <em> from student where 5=to_number(EMAIL);<br>   to_char()：<br>   1.将数字转换为字符串<br>   select </em> from student where ‘456.12’ = to_char(salary);<br>   2.常用在货币单位，格式化字符串<br>   select to_char(123123123123.00,’999,999,999,999,999.00’) from dual;<br>   3.日期转换<br>   to_char(日期，’yyyy-MM-dd HH:mm:ss’)<br>   select to_char(sysdate,’yyyy-mm-dd hh24:mi:ss’) from dual;<br>   select to_char(systimestamp,’yyyy-mm-dd hh24:mi:ss:ff3’) from dual;</p>
+<p>   to_date(c1,c2)<br>   c1:字符类型的日期<br>   c2:格式<br>   select to_date(‘2018-03’,’yyyy-mm’) from dual;<br>   sqlplus中变换日期输出格式的方法–当前对话框<br>   alter session set nls_date_format = ‘yyyy-mm-dd hh24:mi:ss’;</p>
+<p>   取出年  取出月  取出日<br>   select to_char(to_date(‘2018-04-04’,’yyyy-mm-dd’),’yyyy’) from dual;<br>   select to_char(to_date(‘2018-04-04’,’yyyy-mm-dd’),’month’) from dual;<br>   select to_char(to_date(‘2018-04-04’,’yyyy-mm-dd’),’dd’) from dual;</p>
+<ol>
+<li><p>日期函数：<br>日期可以加减（整数）运算  单位是：天  相差结果是多少天<br>两个日子没法相加</p>
+<p>yyyy 年  year 年<br>mm   月  month 带”月”的月份<br>ddd  年中的天<br>dd   月中的天<br>d    周中的天<br>hh   12小时制<br>hh24 24小时制<br>mi   分钟<br>ss   秒<br>xff  毫秒</p>
+<p>java:yyyy-MM-dd HH:mm:ss<br>Oracle:yyyy-mm-dd hh24:mi:ss:xff<br>ff3  毫秒数保留三位</p>
+<p>add_months(c1,c2)  在某个日子上增加多少个月<br>c1:日期<br>c2:整数值<br>select add_months(sysdate,-1) from dual;</p>
+<p>months_between(c1,c2)  计算两个日期之间的月份<br>计算方式：c1-c2<br>select months_between(sysdate,’2018-03-03’) from dual;</p>
+<p>last_day(c1)  计算给定日期的所在月份的最后一天<br>select last_day(sysdate) from dual;</p>
+<p>next_day(c1,c2)<br>c1:日期<br>c2:周中的某天<br>select next_day(sysdate,’星期二’) from dual;</p>
+</li>
+<li><p><strong>字符函数：</strong>  ###<br>lower():转换成小写<br>upper():转换成大写<br>initcap():首字母大写<br>length():求长度<br>select upper(name),initcap(name),length(name)<br>from student where name=’xiaoli’;</p>
+<p>substr(c1,c2,c3)  截取字符串<br>c1:被截取的字符串<br>c2:从哪个位置开始截取<br>c3:截取长度  默认截取到最后<br>select substr(‘woshizhizhuxia’,6) from dual;<br>select substr(‘woshizhizhuxia’,6,6) from dual;</p>
+<p>instr(c1,c2,c3,c4)  索引字符串<br>c1:被查询的字符串<br>c2:希望找到的字符<br>c3:从哪个位置开始找  默认是1<br>c4:第几次出现<br>select instr(‘woshizhizhuxia’,’z’,1,2) from dual;</p>
+<p>concat(c1,c2)  拼接字符串<br>select concat(‘123’,’456’) from dual;<br>select ‘123’ || ‘456’ from dual;</p>
+<p>lpad(c1,c2,c3)  左侧补全<br>rpad(c1,c2,c3)  右侧补全<br>c1:希望补全的字符串<br>c2:补全到多少位<br>c3:以哪个字符来补全<br>select rpad(‘abc’,10,’a’) from dual;</p>
+<p>trim(c1) 默认c1的两侧去除空格<br>trim(c1 from c2) 把c2的两侧移除指定的c1<br>select trim(‘a’ from ‘aaaabaabcaabaaaa’) from dual;</p>
+<p>ltrim(c1,c2) 左侧去除<br>rtrim(c1,c2) 右侧去除<br>c1:被去除的字符串<br>c2:去除的字符串  默认是空格<br>select ltrim(‘           abc’,’ ‘) from dual;</p>
+<p>replace(c1,c2,c3)  完全替换<br>c1:原字符串<br>c2:被替换的字符串<br>c3:替换的字符串<br>select replace(‘12311111’,’1’,’5’) from dual;<br>select replace(name,’x’,’3’) from student;</p>
+</li>
+<li><p>通用函数</p>
+<ul>
+<li><strong>nvl():空值处理</strong></li>
+</ul>
+<p>nvl(字段，替换显示的内容)<br>select email,nvl(email,’888’) from student;</p>
+<ul>
+<li>nvl2():空值处理二代</li>
+</ul>
+<p>nvl2(字段，不是空显示什么，是空显示什么)<br>select email,nvl2(email,’888’,’666’) from student;</p>
+<ul>
+<li>decode(c1,c2,c3,c4,c5,….Cx,Cx+1)</li>
+</ul>
+<p>c1：原来拿来判断的值<br>从第二个参数开始，每两个参数看作是一组，拿每一组的第一个参数和c1进行比较<br>如果相同则返回该组的第二个参数<br>第一次判断：c2==c1?c3:<br>第二次判断：c4==c1?c5:<br>如果参数个数是奇数个，并且最终判断没有相同的数据，则返回空<br>如果参数个数是偶数个，并且最终判断没有相同的数据，则返回最后一个参数的值<br>select name,decode(email,’3’,salary+200,’7’,salary-200,salary+500) a<br>from student;</p>
+</li>
+<li><ul>
+<li>条件取值语句：</li>
+</ul>
+<p>case email                –开始条件取值<br>when ‘3’                  –当条件成立<br>then salary+200           –则。。<br>when ‘7’ then salary-200  –。。。<br>else salary+500           –默认值<br>end                       –结束</p>
+<p>select name，email,<br>(case email<br>when ‘3’ then salary+200<br>when ‘7’ then salary-200<br>else salary+500<br>end) a<br> from student </p>
+<p>查询手机号中间四位以<em>**</em>代替<br>select substr(phone,1,3) || ‘’ || substr(phone,8) from student;</p>
+</li>
+</ol>
+<h3 id="14-排序-order-by"><a href="#14-排序-order-by" class="headerlink" title="14.排序  order by"></a><strong>14.排序  order by</strong></h3><p>   排序字段：desc 代表降序  asc 代表升序<br>   order by 后面可以加多个字段<br>   order by 字段1 desc,字段2 asc<br>   select <em> from student order by salary desc;<br>   select </em> from student order by salary asc;</p>
+<h3 id="15-分组-group-by"><a href="#15-分组-group-by" class="headerlink" title="15.分组  group by"></a><strong>15.分组  group by</strong></h3><p>   根据某一个或多个列上的值，将该列上相同的值所在的记录划分为一个组<br>   这样一张表就可以被划分为多个组<br>   如果以字段A分组，那么只能直接查询A<br>   <em>**</em>或者用组函数统计其他字段，不能直接查询其他字段<br>   select count(email),name from student group by name;<br>     group by   having</p>
+<p> wm_concat 展示组内在某个列上有哪些数据<br>select pid,wm_concat(bname),sum(num) from book group by pid;</p>
+<p>查询语句常见关键字的优先级：<br>select     列名   –优先级高于order by<br>from       表名   –from 优先级最高<br>where      条件   –优先级 次高<br>group by   分组   –优先级 次于where<br>having     条件   –优先级一定在group by之后<br>order by   排序   –优先级最低</p>
+<h2 id="3-约束（表限制）"><a href="#3-约束（表限制）" class="headerlink" title="3. 约束（表限制）"></a>3. 约束（表限制）</h2><h3 id="1-主键约束"><a href="#1-主键约束" class="headerlink" title="1. 主键约束"></a>1. 主键约束</h3><p>primary key</p>
+<p>主键列：非空切唯一</p>
+<p>一张表只能有一个主键。数据库会在具有唯一性的列上自动添加唯一性约束。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create table 表名（</span><br><span class="line"> id number constraint 约束名 (id_zhujian) primary key,</span><br><span class="line"> 列名  数据类型</span><br><span class="line">）</span><br></pre></td></tr></table></figure>
+<p>*: constraint :  约束名  可以不写，由系统自动生成。</p>
+<p>###2. 外键约束   </p>
+<p>foreign key *:   references </p>
+<p>外键定义：在子表中，如果有一个列引用了母表中的主键列上的值，那么字表中的列就是外键列。</p>
+<blockquote>
+<p>student 母表   id  主键<br>class   子表   id  主键  sid对应student的id<br>*:一张表可以有多个外键</p>
+</blockquote>
+<p>非空约束：not null</p>
+<p>唯一：   unique</p>
+<p>检查：  check</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">create table teacher(</span><br><span class="line">id number(3) primary key,</span><br><span class="line">name varchar2(20) not null unique,</span><br><span class="line">salary number(8,2) check(salary&lt;=200000)</span><br><span class="line">);</span><br><span class="line">insert into teacher values(1,&apos;huiqian&apos;,28888);</span><br><span class="line">insert into teacher values(2,&apos;zhoulaoshi&apos;,18888);</span><br><span class="line">insert into teacher values(3,&apos;zhanglaoshi&apos;,26888);</span><br><span class="line">insert into teacher values(4,&apos;laoda&apos;,8888);</span><br><span class="line"></span><br><span class="line">create table class(</span><br><span class="line">id number(3) primary key,</span><br><span class="line">name char(6) not null unique,</span><br><span class="line">qq varchar2(20) check(length(qq)&gt;=8),</span><br><span class="line">tid number(3) references teacher(id)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into class values(1,&apos;ET1803&apos;,&apos;11111111&apos;,3);</span><br><span class="line">insert into class values(2,&apos;ET1804&apos;,&apos;22222222&apos;,4);</span><br><span class="line">insert into class values(3,&apos;ET1805&apos;,&apos;33333333&apos;,1);</span><br><span class="line"></span><br><span class="line">create table school(</span><br><span class="line">id number(3) primary key,</span><br><span class="line">name varchar2(20) not null unique,</span><br><span class="line">phone varchar2(20) check(length(phone)&gt;=7)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into school values(1,&apos;ETOAK&apos;,&apos;0531-55555511&apos;);</span><br><span class="line">insert into school values(2,&apos;北大&apos;,&apos;0531-55555522&apos;);</span><br><span class="line">insert into school values(3,&apos;清华&apos;,&apos;0531-55555533&apos;);</span><br><span class="line">insert into school values(4,&apos;厦大&apos;,&apos;0531-55555544&apos;);</span><br><span class="line"></span><br><span class="line">create table student(</span><br><span class="line">id number(3) primary key,</span><br><span class="line">name varchar2(20) not null,</span><br><span class="line">birthday date,</span><br><span class="line">salary number(7,2) check(salary between 10000 and 30000),</span><br><span class="line">email varchar2(50) unique,</span><br><span class="line">sid number(3) references school(id),</span><br><span class="line">cid number(3) references class(id)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">insert into student values(1,&apos;哪咤&apos;，to_date(&apos;19950707&apos;,&apos;yyyymmdd&apos;),</span><br><span class="line">18000,&apos;998765@qq.com&apos;,1,1);</span><br><span class="line">insert into student values(2,&apos;葫芦娃&apos;，to_date(&apos;18880606&apos;,&apos;yyyymmdd&apos;),</span><br><span class="line">10000,&apos;345678@qq.com&apos;,4,2);</span><br><span class="line">insert into student values(3,&apos;悟空&apos;，to_date(&apos;19990505&apos;,&apos;yyyymmdd&apos;),</span><br><span class="line">20000,&apos;123456@qq.com&apos;,3,1);</span><br><span class="line">insert into student values(4,&apos;八戒&apos;，to_date(&apos;20001216&apos;,&apos;yyyymmdd&apos;),</span><br><span class="line">12000,&apos;456123@qq.com&apos;,1,3);</span><br></pre></td></tr></table></figure>
+<h3 id="3-如何添加约束"><a href="#3-如何添加约束" class="headerlink" title="3.如何添加约束"></a>3.如何添加约束</h3><p>alter table test add  constraint aa primary key(tid);</p>
+<h3 id="4-如何查看已经存在的约束"><a href="#4-如何查看已经存在的约束" class="headerlink" title="4.如何查看已经存在的约束"></a>4.如何查看已经存在的约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//如何查看已经存在的约束：</span><br><span class="line"><span class="keyword">select</span> constraint_name,constraint_type <span class="keyword">from</span> user_constraints</span><br><span class="line"><span class="keyword">where</span> table_name = <span class="keyword">upper</span>(<span class="string">'test'</span>);</span><br></pre></td></tr></table></figure>
+<p>sql 语句的注释    –注释内容</p>
+<h3 id="5-如何删除约束"><a href="#5-如何删除约束" class="headerlink" title="5.  如何删除约束"></a>5.  如何删除约束</h3><p>alter  table test drop constraint   SYS_C0011132;</p>
+<blockquote>
+<p><em>：数据库中表的约束越多，表越健壮
+</em>：约束越多，效率越低<br>*：通常一张表中常用的约束  主键约束  外键约束   </p>
+</blockquote>
+<h2 id="4-复杂查询"><a href="#4-复杂查询" class="headerlink" title="4. 复杂查询"></a>4. 复杂查询</h2><h3 id="1-子查询-嵌套查询-某些查询的条件是通过查询得出来的"><a href="#1-子查询-嵌套查询-某些查询的条件是通过查询得出来的" class="headerlink" title="1. 子查询 = 嵌套查询 = 某些查询的条件是通过查询得出来的"></a>1. 子查询 = 嵌套查询 = 某些查询的条件是通过查询得出来的</h3><figure class="highlight plain"><figcaption><span>(select name from school where id</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select name from student where sid=(select id from student</span><br><span class="line">where name like &apos;哪吒&apos;);</span><br></pre></td></tr></table></figure>
+<h3 id="2-连表查询"><a href="#2-连表查询" class="headerlink" title="2. 连表查询"></a>2. 连表查询</h3><ul>
+<li>内连接：通过关系能够关联出部分数据</li>
+</ul>
+<p>innner join on = join on<br>select student.name,school.name from student<br>inner join school on student.sid = school.id;</p>
+<ul>
+<li><strong>外连接</strong>：不仅包括有关联关系的数据，还包括没有关联关系的数据</li>
+</ul>
+<p>outer join on</p>
+<ul>
+<li><strong>左外联接</strong>：以左表为主，左表中的每一行数据，无论是否满足条件</li>
+</ul>
+<p>最终都会显示，但是关联表的所有信息都以空显示</p>
+<p>from 左表（旧表） left join 右表（新表） on 关联关系</p>
+<p>*：旧表关联上新表的数据+关联不上的旧表的部分数据</p>
+<p>select school.name,student.name from school<br>left join student on school.id = student.sid;</p>
+<ul>
+<li><strong>右外连接</strong>：右表为主 右表中的每行数据都显示 无论是否满足条件</li>
+</ul>
+<p>最终都会显示，但是关联表的所有信息都以空显示</p>
+<p>from 左表（旧表）  right join 右表（新表） on 关联关系<br>*：旧表关联上新表的数据 + 关联不上的新表的部分数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select student.name,school.name from student</span><br><span class="line"></span><br><span class="line">right join school on student.sid = school.id;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>全外连接</strong>：两张表的数据都展示</li>
+</ul>
+<p>full join on<br>from 左表（旧表） full join 右表（新表） on 关联关系<br>*：旧表关联上新表的数据+关联不上的旧表的数据+关联不上的新表的数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> student.name,school.name <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">full</span> <span class="keyword">join</span> school <span class="keyword">on</span> student.sid = school.id;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>交叉连接：两张表的数据一一对应 交叉形成最终结果</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cross join</span><br><span class="line"></span><br><span class="line">select student.name,book.bname from student</span><br><span class="line"></span><br><span class="line">cross join book;</span><br><span class="line"></span><br><span class="line">select class.name,school.name,student.name from student</span><br><span class="line"></span><br><span class="line">left join class on class.id = student.cid</span><br><span class="line"></span><br><span class="line">right join school on school.id = student.sid;</span><br></pre></td></tr></table></figure>
+<h2 id="5-常用系统工具"><a href="#5-常用系统工具" class="headerlink" title="5. 常用系统工具"></a>5. 常用系统工具</h2><h3 id="1-伪表-dual"><a href="#1-伪表-dual" class="headerlink" title="1.伪表 dual"></a>1.伪表 dual</h3><p>伪列 = 假列 = 根本不存在的列<br>*：不属于表中真正的列，数据库查询的表添加的列</p>
+<p>dual表是一个虚拟表，用来和select语句一起使用。<br>1、查看当前用户<br>select  user from dual<br>2、用来调用系统函数<br>select to_char(sysdate,’yyyy-mm-dd hh24:mi:ss’) from dual —-得到当前系统时间</p>
+<p>select SYS_CONTEXT(‘USERENV’,’TERMINAL’) from dual;–获得主机名</p>
+<p>select SYS_CONTEXT(‘USERENV’,’language’) from dual;–获得当前locale</p>
+<p>select dbms_random.random from dual;–获得一个随机数</p>
+<p>3、得到序列的下一个值或当前值，用下面语句</p>
+<p>select your_sequence.nextval from dual;–获得序列your_sequence的下一个值</p>
+<p>select your_sequence.currval from dual;–获得序列your_sequence的当前值</p>
+<p>4、可以用做计算器</p>
+<p>select 7*9 from dual;</p>
+<p>5、查空值<br>select  null extattrid,null extattrname from dual union all select  extattrid,extattrname<br>from VExtAttrDetail where extattrsn in (22)</p>
+<h3 id="2-rownum-行号-分页的根据"><a href="#2-rownum-行号-分页的根据" class="headerlink" title="2. rownum = 行号 分页的根据"></a>2. rownum = 行号 分页的根据</h3><p>这是oracle对查询动态结果动态的编号，用来实现”分页查询”<br>有序的整数列，每多一条自动加1<br>1）不能和order by 在同一个查询语句中<br>因为order by 会打乱select取值的顺序<br>2）不能使用表名.rownum的写法<br>3）特性<br> 如果rownum用在where条件之后则：<br> rownum&gt;只能是0  rownum&lt;任意数   rownum&lt;=任意数  rownum&gt;=1</p>
+<p>//动态增加，给指定条件加入临时的rownum。<br>为什么  rownum between 20 and  30 没有数据<br>   当表中第一列不满足between 20的条件时，该条数据就会被从该表中移除，因此下条rownum 永远为1，依次移除，所以不会有数据。</p>
+<hr>
+<p>1.实现第一页数据 编号1-10<br>select rownum,substr(content,1,10)||’…’ from lyric<br>where rownum between 1 and 10;<br>2.实现第二页数据 编号11-20<br>select rownum,a.<em> from (select rownum rn,substr(content,1,10)||’…’<br>from lyric where rownum &lt;=20)a where rn&gt;=11;<br>3.实现第三页数据 编号21-30<br>select rownum,a.</em> from (select rownum rn,substr(content,1,10)||’…’<br>from lyric where rownum &lt;=30)a where rn&gt;=21;<br>4.排序效果的分页<br>select rownum,a.<em> from (select rownum rn,substr(content,1,10)||’…’<br>from (select </em> from lyric order by content)where rownum&lt;=30)a where rn&gt;=21;</p>
+<hr>
+<p>curpage:当前页    3<br>pagesize:每页行数 10<br>当前页的开始数:int startpage = (curpage-1) <em> pagesize +1   21<br>当前页的截止数:int endpage = curpage </em> pagesize            30</p>
+<h3 id="3-rowid-是映射每一行数据物理地址的唯一标识"><a href="#3-rowid-是映射每一行数据物理地址的唯一标识" class="headerlink" title="3.rowid = 是映射每一行数据物理地址的唯一标识"></a>3.rowid = 是映射每一行数据物理地址的唯一标识</h3><p>通常适用于删除完全重复的数据</p>
+<p>delete from lyric where rowid not in (select min(rowid) from lyric<br>group by content);</p>
+<p>联合关键字：<br>union  结果唯一<br>select <em> from school where name like ‘%大’<br>union<br>select </em> from school where name like ‘北%’;</p>
+<p>union all 结果不唯一<br>select <em> from school where name like ‘%大’<br>union all<br>select </em> from school where name like ‘北%’</p>
+<p>intersect 求交集<br>select <em> from school where name like ‘%大’<br>intersect<br>select </em> from school where name like ‘北%’</p>
+<p>minus 从第一个查询结果中，减去第二个查询结果中重复出现的数据<br>select <em> from school where name like ‘%大’<br>minus<br>select </em> from school where name like ‘北%’</p>
+<p>in:表示条件符合查询结果中某一个值就成立<br>条件 in(值1，值2。。。。)<br>相当于：条件=值1 or 条件=值2 or …<br> select * from school where id in(select sid from student);</p>
+<p>not in:表示条件不能是查询结果中的任意一个值<br>条件 not in(值1，值2。。。。)<br>相当于:条件&lt;&gt;值1 and 条件&lt;&gt;值2 and 。。。<br>select * from school where id not in (select sid from student);</p>
+<p>some/any:这两个用法和in相同<br>区别在于:in可以在无符号的情况<br>         some/any用在有符号的情况<br>select * from school where id = some(select sid from student);</p>
+<p>all:表示所有的值都大 或 都小  &gt;all  &lt;all<br><em>*</em>:</p>
+<blockquote>
+<p>any   &gt;min</p>
+<p><any <max="" all="">max</any></p>
+<p>&lt;all   &lt;min</p>
+</blockquote>
+<p>select name,salary from student where salary</p>
+<p>&lt;any(select salary from student where cid = 1);</p>
+<p>select name,salary from student where salary</p>
+<p>&lt;all(select salary from student where cid = 1);</p>
+<p>*:因为in的效率低，所以用exists代替</p>
+<p>exists:是否存在   not exists<br>用法:不需要用列来比较，只关心后面的查询有没有结果<br>select <em> from school s where exists<br>(select </em> from student st where st.sid = s.id);</p>
+<p>*：什么时候使用多表连接？什么时候子查询？<br>1.如果需要查询的数据在多个表中，一定要使用多表连接<br>2.不需要表A中的列，但是又有该表A的条件，可以用子查询<br>3.子查询中如果使用了 in some any all这几个关键字，效率比较低，<br>可以考虑转换成多表关联的方式</p>
+<h3 id="4-序列：sequence"><a href="#4-序列：sequence" class="headerlink" title="4.序列：sequence"></a>4.序列：sequence</h3><p>一个单独的数据对象，是一个能够生成有序的整数列值的对象<br><strong>*</strong>：oracle通过调用序列的形式来实现主键自增<br><strong><em>：在一个新的会话中，必须要调用下一个值才能获得当前得值
+</em></strong>：seq_student.nextval会作为下一个添加的初始值</p>
+<p>create sequence 序列名;</p>
+<p>create sequence seq_student<br>increment by 1/-1  –增长，一次增1   正数+1  负数-1<br>start with 1       –从1开始    升序默认就是+1  降序-1<br>minvalue 1         –最小值     -10的26次幂<br>maxvalue 100       –最大值     10的27次幂<br>cycle              –循环       默认nocycle<br>nocache;           –不缓存     cache 4 默认生成20个序列号</p>
+<p>查询当前用户下有多少序列<br>select * from user_sequences;</p>
+<p>如何获取下一个列的值<br>seq_student.nextval<br>insert into test values(seq_test.nextval,’g’);</p>
+<p>如何获取当前序列的值<br>seq_student.curval</p>
+<p>如何删除序列<br>drop sequene seq_test;</p>
+<p>如何修改序列<br>alter sequence seq_test increment by 50;</p>
+<p>消除延迟段创建特性<br>alter session set deferred_segment_creation=false;</p>
+<h2 id="5-视图"><a href="#5-视图" class="headerlink" title="5.视图"></a>5.视图</h2><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h3><p> 视图 view =&gt;假表，用查询的结果动态生成一张表</p>
+<ul>
+<li>视图是编译后将查询语言保存到数据库中，下次调用视图，可以不用在编译，直接获取数据</li>
+<li>语法：    create view 视图名 as select * from student;</li>
+<li>使用： select * from 视图名;</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> v_student <span class="keyword">as</span> <span class="keyword">select</span> <span class="keyword">id</span>,<span class="keyword">name</span> <span class="keyword">from</span> student;</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> v_student;</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">view</span> studentName_schoolName <span class="keyword">as</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> student.name sn,school.name cn <span class="keyword">from</span> student</span><br><span class="line"></span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> school <span class="keyword">on</span> student.sid = school.id;</span><br></pre></td></tr></table></figure>
+<h3 id="2-为什么使用视图？"><a href="#2-为什么使用视图？" class="headerlink" title="2.为什么使用视图？"></a>2.为什么使用视图？</h3><p>节省编译时间，提高查询效率<br>屏蔽原表中的字段：避免没有权限的用户查询其他的字段（看到不该看的）<br>视图中能够根据动态来源于原表（alter view 视图名 compile）<br>简单的视图是可以更新原表中的数据<br>复杂的视图无法更新（关联出来的数据不能只更新其中的一条）</p>
+<h2 id="6-表空间"><a href="#6-表空间" class="headerlink" title="6.表空间"></a>6.表空间</h2><ul>
+<li>表空间  <strong>tablespace</strong></li>
+</ul>
+<p>​    oracle中的<strong>用户都有属于自己的默认的空间</strong><br>      在一段内存空间中大部分存储的是表，所以称为表空间</p>
+<ul>
+<li><p>用户的表空间</p>
+<p>系统用户的表空间</p>
+<p>普通用户的表空间</p>
+</li>
+<li><p><strong>为什么要给普通用户创建属于自己的空间呢？</strong></p>
+</li>
+</ul>
+<p>项目中很可能与其他项目使用同一个数据库，<br>多个用户在使用同一个数据库的时候有可能访问同一个数据库文件，<br>就会造成资源争用问题，给不同的用户指定不同的表空间，就可以让他们<br>使用不同的数据文件，解决争用问题。</p>
+<p><strong>临时表空间</strong><br>数据最终存储在数据块中<br>数据块=&gt;盘区=&gt;段=&gt;数据文件=&gt;表空间</p>
+<ul>
+<li><strong>创建表空间</strong></li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">tablespace</span> 表空间名 nologging</span><br><span class="line"></span><br><span class="line"><span class="keyword">datafile</span> <span class="string">''</span>        <span class="comment">-- 文件位置（一定要存在）</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">size</span>      <span class="number">100</span>M     <span class="comment">--初始大小</span></span><br><span class="line"></span><br><span class="line">autoxtend <span class="keyword">on</span> <span class="built_in">text</span>  <span class="comment">--下一次扩展大小</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">maxsize</span>            <span class="comment">--最大值</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>给用户指定表空间</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create user et1803 identified by et1803</span><br><span class="line">default tablespace 表空间名et1803;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建用户后修改</li>
+</ul>
+<p>alter user et1803 default tablespace 表空间名et1804;</p>
+<ul>
+<li>删除表空间</li>
+</ul>
+<p>drop tablespace 表空间名 including ontents and datailes;</p>
+<p><strong>*:删除表空间后，原先指向该表空间的用户仍然默认的空间位置，</strong><br><strong>需要通过alter user 命令将用户的表空间指向一个有效的表空间。</strong> </p>
+<h2 id="7-索引"><a href="#7-索引" class="headerlink" title="7.索引"></a>7.索引</h2><ul>
+<li>索引：index   =&gt; 目录</li>
+</ul>
+<p>数据库会在具有唯一性的列上自动添加唯一性索引</p>
+<ul>
+<li>如何创建索引</li>
+</ul>
+<p>create index 索引名 on 表名（字段）;<br>create index index_name on student(name);</p>
+<ul>
+<li>查询索引</li>
+</ul>
+<p>select index_name,table_name,uniqueness,status from user_indexes<br>where table_name like ‘STUDENT’;</p>
+<ul>
+<li>修改索引</li>
+</ul>
+<p>alter index index_name rename to new_index_name;</p>
+<ul>
+<li>删除索引</li>
+</ul>
+<p>drop index 索引名;<br>drop index new_index_name;</p>
+<ul>
+<li><p>索引类型：</p>
+<ul>
+<li><p>普通索引：normal</p>
+<p>create index 索引名 on 表名（列名）;</p>
+</li>
+<li><p>唯一性索引;unique</p>
+<p>create unique index 索引名 on 表名（列名）;</p>
+<ul>
+<li><p>位图索引（分类）：bitmap</p>
+<p>这种索引适合用在数据量比较大，基数比较小的列    比如：男/女/..<br>create bitmap index 索引名 on 表名（列名）;<br>函数索引：在一个列上经过函数计算后的结果上创建索引<br>create index 索引名 on 表名（函数（列名））;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>创建索引的优缺点</strong></p>
+</li>
+</ul>
+<p>能够更快的帮助我们进行提高查询效率<br>增删改表中的数据，数据库就需要耗费资源去维护索引，降低增删改的效率<br>数据量如果很少，没必要用索引<br>数据量比较大，不需要经常增删改操作而且查询比较多，适合使用索引</p>
+<h2 id="8-存储过程"><a href="#8-存储过程" class="headerlink" title="8. 存储过程"></a>8. 存储过程</h2><p><strong>存储过程：procedure在服务器端，能够被一个或多个应用程序调用的一段sql语句集</strong></p>
+<ul>
+<li>创建存储过程</li>
+</ul>
+<p>create or replace procedure<br>过程名（参数名 in 参数类型，参数名 in 参数类型，参数名 out 参数类型，参数名 out 参数类型）<br>as<br>变量名 变量类型 := 值；<br>begin<br>sql语句集；<br>end;</p>
+<blockquote>
+<p>存储过程可以没有参数，如果没有参数则过程名之后不能出现括号</p>
+<p>存储过程可以有参数</p>
+<p>传入参数用in标明，传出参数用out标明</p>
+<p>可以有多个参数传入，也可以有多个传出参数<br>可以只有传入参数，也可以只有传出参数<br>存储过程没有返回值，而是通过返回参数来返回数据的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">如果传入参数1，则返回你好</span><br><span class="line"></span><br><span class="line">如果传入参数2，则返回再见</span><br><span class="line"></span><br><span class="line">create or replace procedure</span><br><span class="line"></span><br><span class="line">pro_hi(mykey in number,value out varchar)</span><br><span class="line"></span><br><span class="line">as</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line"></span><br><span class="line">if mykey = 1</span><br><span class="line"></span><br><span class="line">then value := &apos;你好&apos;;</span><br><span class="line"></span><br><span class="line">else if mykey = 2</span><br><span class="line"></span><br><span class="line">then value := &apos;再见&apos;;</span><br><span class="line"></span><br><span class="line">end if;</span><br><span class="line"></span><br><span class="line">end if;</span><br><span class="line"></span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">/</span><br><span class="line"></span><br><span class="line">调用存储过程</span><br><span class="line"></span><br><span class="line">declare </span><br><span class="line"></span><br><span class="line">变量 类型:=初始值;</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line"></span><br><span class="line">过程名（参数，变量）;</span><br><span class="line"></span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">开启</span><br><span class="line"></span><br><span class="line">set serveroutput on;</span><br><span class="line"></span><br><span class="line">declare</span><br><span class="line"></span><br><span class="line">val varchar2(20):=&apos;&apos;;</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line"></span><br><span class="line">pro_hi(1,val);</span><br><span class="line"></span><br><span class="line">dbms_output.put_line(val);</span><br><span class="line"></span><br><span class="line">pro_hi(2,val);</span><br><span class="line"></span><br><span class="line">dbms_output.put_line(val);</span><br><span class="line"></span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
+<h2 id="9-触发器"><a href="#9-触发器" class="headerlink" title="9.触发器"></a>9.触发器</h2><p><strong>触发器：trigger</strong></p>
+<p>for each row:行级触发器的标志</p>
+<ul>
+<li>创建触发器：</li>
+</ul>
+<p>create or replace trigger 触发器名<br>before/after  insert/update/delete  on 表名<br>for each row<br>begin<br>sql语句集;<br>end;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">--创建表</span><br><span class="line"></span><br><span class="line">create table good(</span><br><span class="line"></span><br><span class="line">id int primary key,</span><br><span class="line"></span><br><span class="line">good_name varchar2(20)</span><br><span class="line"></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">--创建序列</span><br><span class="line"></span><br><span class="line">create sequence seq_ids;</span><br><span class="line"></span><br><span class="line">--创建触发器</span><br><span class="line"></span><br><span class="line">create or replace trigger tri_insert_good</span><br><span class="line"></span><br><span class="line">before insert on good</span><br><span class="line"></span><br><span class="line">for each row</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line"></span><br><span class="line">select seq_ids.nextval</span><br><span class="line"></span><br><span class="line">into:new.id</span><br><span class="line"></span><br><span class="line">from dual;--从序列中生成一个新的数值，赋值给当前插入行的id列</span><br><span class="line"></span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">--增加数据，触发器</span><br><span class="line"></span><br><span class="line">insert into good (good_name) values (&apos;苹果&apos;);</span><br><span class="line"></span><br><span class="line">insert into good (good_name) values (&apos;香蕉&apos;);</span><br><span class="line"></span><br><span class="line">--查询数据看结果</span><br><span class="line"></span><br><span class="line">select * from good;</span><br><span class="line"></span><br><span class="line">--创建日志表</span><br><span class="line"></span><br><span class="line">create table test_log(</span><br><span class="line"></span><br><span class="line">name varchar2(20),</span><br><span class="line"></span><br><span class="line">time date</span><br><span class="line"></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">--创建触发器</span><br><span class="line"></span><br><span class="line">create or replace trigger test_dept</span><br><span class="line"></span><br><span class="line">before delete or insert or update on dept</span><br><span class="line"></span><br><span class="line">declare var_tag varchar2(20);--声明一个变量，存储对dept表执行的操作类型</span><br><span class="line"></span><br><span class="line">begin</span><br><span class="line">if inserting then</span><br><span class="line">var_tag :=&apos;insert&apos;;</span><br><span class="line">elsif updating then</span><br><span class="line">var_tag :=&apos;update&apos;;</span><br><span class="line">elsif deleting then</span><br><span class="line">var_tag :=&apos;delete&apos;;</span><br><span class="line">end if;</span><br><span class="line"></span><br><span class="line">insert into test_log values(var_tag,sysdate);--向日志表中插入对dept表的操作信息</span><br><span class="line">end;</span><br><span class="line"></span><br><span class="line">--分别执行语句对dept表进行操作</span><br><span class="line"></span><br><span class="line">insert into dept values(66,&apos;教育部&apos;,&apos;济南&apos;);</span><br><span class="line">update dept set loc=&apos;易途&apos; where deptno = 66;</span><br><span class="line">delete from dept where deptno=66;</span><br><span class="line">select * from dept;</span><br><span class="line">select * from test_log;</span><br></pre></td></tr></table></figure>
+<h2 id="10-sql语句其他"><a href="#10-sql语句其他" class="headerlink" title="10.sql语句其他"></a>10.sql语句其他</h2><ul>
+<li><strong>distinct:去重</strong></li>
+</ul>
+<p>支持单列，多列的去重方式<br>select distinct sid from student;<br>select distinct sid,name,id from student;</p>
+<p>group by:聚合统计</p>
+<h2 id="11-sql-优化"><a href="#11-sql-优化" class="headerlink" title="11. sql 优化"></a>11. sql 优化</h2><p><strong>sql语句优化</strong></p>
+<ol>
+<li><strong>建议不用”*”来代替所有列名</strong></li>
+<li><strong>2.用truncate代替delete</strong></li>
+<li><strong>3.在确保语句完整性的情况下多用commit语句（用在begin..end中）</strong></li>
+<li><strong>4.尽量减少表的查询次数</strong></li>
+</ol>
+<p><strong>5.用not exists 代替 not in</strong><br><strong>6.表连接在where条件之前，数据多的记录在where字句的末尾，表连接之前过滤掉的数据越多越好</strong><br><strong>7.合理使用索引</strong><br><strong>8.sql语句尽量用大写的，oracle总是先解析sql语句，把小写的转换成大写的在执行</strong><br><strong>9.连接多个表时尽量使用表的别名，减少解析时间</strong><br><strong>10.优化group by,将不需要的记录在group by之前过滤掉</strong></p>
+<p>查询低效率执行的sql:<br> SELECT EXECUTIONS,DISK_READS,BUFFER_GETS,<br>      ROUND((BUFFER_GETS-DISK_READS)/BUFFER_GETS,2) HIT_RADIO,<br>      ROUND(DISK_READS/EXECUTIONS,2) Reads_per_run,SQL_TEXT<br> FROM V$SQLAREA<br> WHERE EXECUTIONS &gt; 0 AND BUFFER_GETS &gt; 0<br> AND (BUFFER_GETS-DISK_READS)/BUFFER_GETS &lt; 0.8<br> ORDER BY 4 DESC;</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/30/Oracle/">Oracle入门（1）</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Hide it away</a></p>
+        <p><span>发布时间:</span>2018-08-30, 13:20:20</p>
+        <p><span>最后更新:</span>2018-08-30, 14:17:23</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/30/Oracle/" title="Oracle入门（1）">http://yoursite.com/2018/08/30/Oracle/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/30/Oracle/　　作者: Hide it away" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/29/hexo上传流程/">
+                    Hexo简单实用（1）
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Oracle总结"><span class="toc-number">1.</span> <span class="toc-text">Oracle总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装和卸载"><span class="toc-number">1.1.</span> <span class="toc-text">1.   安装和卸载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-sql语句"><span class="toc-number">1.2.</span> <span class="toc-text">2. sql语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-修改表名，字段名"><span class="toc-number">1.2.1.</span> <span class="toc-text">4. 修改表名，字段名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-增删改查数据"><span class="toc-number">1.2.2.</span> <span class="toc-text">5. 增删改查数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-多行函数"><span class="toc-number">1.2.3.</span> <span class="toc-text">7. 多行函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-单行函数"><span class="toc-number">1.2.4.</span> <span class="toc-text">8. 单行函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-转换函数"><span class="toc-number">1.2.5.</span> <span class="toc-text">9. 转换函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-排序-order-by"><span class="toc-number">1.2.6.</span> <span class="toc-text">14.排序  order by</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-分组-group-by"><span class="toc-number">1.2.7.</span> <span class="toc-text">15.分组  group by</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-约束（表限制）"><span class="toc-number">1.3.</span> <span class="toc-text">3. 约束（表限制）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-主键约束"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. 主键约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-如何添加约束"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.如何添加约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-如何查看已经存在的约束"><span class="toc-number">1.3.3.</span> <span class="toc-text">4.如何查看已经存在的约束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-如何删除约束"><span class="toc-number">1.3.4.</span> <span class="toc-text">5.  如何删除约束</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-复杂查询"><span class="toc-number">1.4.</span> <span class="toc-text">4. 复杂查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-子查询-嵌套查询-某些查询的条件是通过查询得出来的"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. 子查询 = 嵌套查询 = 某些查询的条件是通过查询得出来的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-连表查询"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. 连表查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-常用系统工具"><span class="toc-number">1.5.</span> <span class="toc-text">5. 常用系统工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-伪表-dual"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.伪表 dual</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-rownum-行号-分页的根据"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. rownum = 行号 分页的根据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-rowid-是映射每一行数据物理地址的唯一标识"><span class="toc-number">1.5.3.</span> <span class="toc-text">3.rowid = 是映射每一行数据物理地址的唯一标识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-序列：sequence"><span class="toc-number">1.5.4.</span> <span class="toc-text">4.序列：sequence</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-视图"><span class="toc-number">1.6.</span> <span class="toc-text">5.视图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-介绍"><span class="toc-number">1.6.1.</span> <span class="toc-text">1. 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-为什么使用视图？"><span class="toc-number">1.6.2.</span> <span class="toc-text">2.为什么使用视图？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-表空间"><span class="toc-number">1.7.</span> <span class="toc-text">6.表空间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-索引"><span class="toc-number">1.8.</span> <span class="toc-text">7.索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-存储过程"><span class="toc-number">1.9.</span> <span class="toc-text">8. 存储过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-触发器"><span class="toc-number">1.10.</span> <span class="toc-text">9.触发器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-sql语句其他"><span class="toc-number">1.11.</span> <span class="toc-text">10.sql语句其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-sql-优化"><span class="toc-number">1.12.</span> <span class="toc-text">11. sql 优化</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-4 i,
+        .toc-level-4 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Oracle入门（1）　| 马克图布！　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://yoursite.com/2018/08/30/Oracle/';
+            this.page.identifier = '2018/08/30/Oracle/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/29/hexo上传流程/" title="下一篇: Hexo简单实用（1）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/30/Oracle/">Oracle入门（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/29/hexo上传流程/">Hexo简单实用（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/29/spring/">Spring框架入门（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/h5/">h5</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/MySQL笔记/">MySQL极简</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/markdown语法/">markdown 语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/JavaScript标记/">前端 简单笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/hexo和yelee主题使用/">hexo和yelee主题的使用笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/Hbuilder使用技巧/">Hbuilder使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2018 Hide it away
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 2;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
