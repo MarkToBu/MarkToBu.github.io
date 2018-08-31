@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="hexo流程">
-<meta name="keywords" content="流程,博客">
+<meta name="description" content="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">
+<meta name="keywords" content="版本控制,Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo简单实用（1）">
-<meta property="og:url" content="http://yoursite.com/2018/08/29/hexo上传流程/index.html">
+<meta property="og:title" content="Git快速使用">
+<meta property="og:url" content="http://yoursite.com/2018/08/31/Git快速使用/index.html">
 <meta property="og:site_name" content="马克图布！">
-<meta property="og:description" content="hexo流程">
+<meta property="og:description" content="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://op1ybr0zi.bkt.clouddn.com/hexos.png">
-<meta property="og:updated_time" content="2018-08-29T05:10:06.937Z">
+<meta property="og:updated_time" content="2018-08-31T01:38:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo简单实用（1）">
-<meta name="twitter:description" content="hexo流程">
-<meta name="twitter:image" content="http://op1ybr0zi.bkt.clouddn.com/hexos.png">
+<meta name="twitter:title" content="Git快速使用">
+<meta name="twitter:description" content="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hexo简单实用（1） | 马克图布！</title>
+<title>Git快速使用 | 马克图布！</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -278,11 +276,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-hexo上传流程" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Git快速使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/08/29/hexo上传流程/" class="article-date">
-      <time datetime="2018-08-29T05:09:00.000Z" itemprop="datePublished">2018-08-29</time>
+      <a href="/2018/08/31/Git快速使用/" class="article-date">
+      <time datetime="2018-08-31T01:38:00.000Z" itemprop="datePublished">2018-08-31</time>
 </a>
 
 
@@ -297,7 +295,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hexo简单实用（1）
+      Git快速使用
     </h1>
   
 
@@ -306,13 +304,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/blog/">blog</a>
+    <a class="article-category-link" href="/categories/版本控制/">版本控制</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/博客/">博客</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/流程/">流程</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制/">版本控制</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -322,41 +320,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Hexo的一些基本命令"><a href="#Hexo的一些基本命令" class="headerlink" title="Hexo的一些基本命令"></a>Hexo的一些基本命令</h2><blockquote>
-<p>hexo g #完整命令为hexo generate,用于生成静态文件</p>
-<p>hexo s #完整命令为hexo server,用于启动服务器，主要用来本地预览</p>
-<p>hexo d #完整命令为hexo deploy,用于将本地文件发布到github等git仓库上</p>
-<p>hexo n “my article” #完整命令为hexo new,用于新建一篇名为“my article”的文章</p>
-</blockquote>
-<h2 id="发布一篇文章"><a href="#发布一篇文章" class="headerlink" title="发布一篇文章"></a>发布一篇文章</h2><p>首先<em>Ctrl+C</em>停止当前的本地服务，然后</p>
-<blockquote>
-<p>hexo n “我的第一篇文章”</p>
-</blockquote>
-<p>这样就会在博客目录下source_posts中生成相应的 <strong>我的第一篇文章.md</strong>文件( 例如 C:\blog\source_posts\我的第一篇文章.md )</p>
-<blockquote>
-<p>文章需要使用Markdown语法进行编写</p>
-</blockquote>
-<h2 id="本地运行"><a href="#本地运行" class="headerlink" title="本地运行"></a>本地运行</h2><p>接下来自然是预览一下博客 。</p>
-<p>分别在Git Bash中执行</p>
-<blockquote>
-<p>hexo g</p>
-<p>hexo s</p>
-</blockquote>
-<p>会看到这样的提示，  如果报错，请看 <a href="#jump" target="_self">这里</a> </p>
-<p>上传目录下。</p>
-<p><img src="http://op1ybr0zi.bkt.clouddn.com/hexos.png" alt="img"></p>
-<p>在浏览器地址栏输入<em><a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></em>,按下回车键，准备好迎接美丽的新领域吧。</p>
-<h2 id="Hexo上传步骤"><a href="#Hexo上传步骤" class="headerlink" title="Hexo上传步骤"></a>Hexo上传步骤</h2><p>以md格式导出到本地，然后copy该md文件，粘贴到你当初建的博客站点文件夹下的source\ _posts目录下，一个md文件对应一篇博客文章。</p>
-<p>接着在你博客站点文件夹下右键空白处，选择Git Bash Here，输入：hexo generate，回车，生成静态页面，<br>再输入：hexo server，回车，到localhost:4000预览博客效果，<br>最后输入：hexo deploy，回车，同步到github上去就行了。</p>
-<h2 id="上传-常用标签"><a href="#上传-常用标签" class="headerlink" title="上传 常用标签"></a>上传 常用标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title:    Spring框架入门（1）</span><br><span class="line">categories:  JavaEE</span><br><span class="line">date:  2018-8-29 9:22:59</span><br><span class="line">tags:  </span><br><span class="line">  - spring框架</span><br><span class="line">  - 开源框架</span><br><span class="line">description:  spring入门</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<ul>
-<li>注意空格和符号（英文符号）</li>
-<li><span id="jump"><font color="red">报错了就找一个<strong>YAML Lint</strong> 测试一下</font></span> </li>
-</ul>
-<h2 id="重装Git-或者系统后-解决"><a href="#重装Git-或者系统后-解决" class="headerlink" title="重装Git 或者系统后 解决"></a>重装Git 或者系统后 解决</h2><p><a href="https://blog.csdn.net/Welkin_qing/article/details/80653339" target="_blank" rel="noopener">https://blog.csdn.net/Welkin_qing/article/details/80653339</a></p>
-<p>npm install hexo –save </p>
-<p>其他问题：</p>
-<p><a href="https://blog.csdn.net/flappy8023/article/details/72453350" target="_blank" rel="noopener">https://blog.csdn.net/flappy8023/article/details/72453350</a></p>
+        <h3 id="git初始化配置"><a href="#git初始化配置" class="headerlink" title="git初始化配置"></a>git初始化配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;imocc&quot;</span><br><span class="line">git config --global user.email &quot;邮箱地址&quot;</span><br><span class="line">git config --global core.autocrlf false</span><br><span class="line">## 配置git 不管住 换行符</span><br><span class="line">git config --global core.qutepath off</span><br><span class="line">## 避免中文乱码</span><br><span class="line"></span><br><span class="line">git config --global gui.encoding utf-8</span><br><span class="line">## 设置gui的字符中编码</span><br></pre></td></tr></table></figure>
+<h4 id="ssh秘钥设置"><a href="#ssh秘钥设置" class="headerlink" title="ssh秘钥设置"></a>ssh秘钥设置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;[邮箱地址]&quot;</span><br><span class="line"></span><br><span class="line">ssh -add ~/ .ssh/id_rsa</span><br><span class="line">## 添加秘钥，如果失败执行下一步，成功跳过下一步</span><br><span class="line"></span><br><span class="line">eval `ssh-agent`</span><br><span class="line">## 运行代理</span><br><span class="line"></span><br><span class="line">ssh -add ~/ .ssh/id_rsa</span><br><span class="line"></span><br><span class="line">cat ~/ .ssh/id_rsa.pub</span><br><span class="line"></span><br><span class="line">## 把公钥辅助出来 ，添加到github或码云上。</span><br></pre></td></tr></table></figure>
+<h3 id="git上传"><a href="#git上传" class="headerlink" title="git上传"></a>git上传</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git clone [项目url地址]</span><br><span class="line">##克隆项目</span><br><span class="line"></span><br><span class="line">## 进行本地修改</span><br><span class="line"></span><br><span class="line">git add .</span><br><span class="line">git commt -m &quot;[提交信息]&quot;</span><br><span class="line">## 提交到本地</span><br><span class="line"></span><br><span class="line">git push </span><br><span class="line">## 推送到远端</span><br></pre></td></tr></table></figure>
+<h3 id="git-ignore文件模板"><a href="#git-ignore文件模板" class="headerlink" title="git ignore文件模板"></a>git ignore文件模板</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">*.class</span><br><span class="line"></span><br><span class="line"># package file</span><br><span class="line"></span><br><span class="line">*.war</span><br><span class="line">*.ear</span><br><span class="line"></span><br><span class="line"># kdiff3 ignore</span><br><span class="line">*.orig</span><br><span class="line"></span><br><span class="line"># maven_ignore</span><br><span class="line">target/</span><br><span class="line"></span><br><span class="line">#eclipse ignore</span><br><span class="line">.settings/</span><br><span class="line">.project</span><br><span class="line">.classpatch</span><br><span class="line"></span><br><span class="line">#  idea</span><br><span class="line">.idea/</span><br><span class="line">/idea/</span><br><span class="line">*.ipr</span><br><span class="line">*.iml</span><br><span class="line">*.iws</span><br><span class="line"></span><br><span class="line">#  temp file</span><br><span class="line">*.log</span><br><span class="line">*.cache</span><br><span class="line">*.diff</span><br><span class="line">*.patch</span><br><span class="line">*.tmp</span><br><span class="line"></span><br><span class="line"># system ignore</span><br><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -365,13 +332,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/08/29/hexo上传流程/">Hexo简单实用（1）</a></p>
+        <p><span>本文标题:</span><a href="/2018/08/31/Git快速使用/">Git快速使用</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Hide it away</a></p>
-        <p><span>发布时间:</span>2018-08-29, 13:09:00</p>
-        <p><span>最后更新:</span>2018-08-29, 13:10:06</p>
+        <p><span>发布时间:</span>2018-08-31, 09:38:00</p>
+        <p><span>最后更新:</span>2018-08-31, 09:38:00</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/08/29/hexo上传流程/" title="Hexo简单实用（1）">http://yoursite.com/2018/08/29/hexo上传流程/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/29/hexo上传流程/　　作者: Hide it away" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/31/Git快速使用/" title="Git快速使用">http://yoursite.com/2018/08/31/Git快速使用/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/31/Git快速使用/　　作者: Hide it away" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -383,16 +350,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/08/30/Oracle/">
-                    Oracle入门（1）
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/08/29/spring/">
-                    Spring框架入门（1）
+                <a href="/2018/08/31/Git和Github详解/">
+                    Git和GitHub详解
                 </a>
             </div>
         
@@ -404,7 +365,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo的一些基本命令"><span class="toc-number">1.</span> <span class="toc-text">Hexo的一些基本命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布一篇文章"><span class="toc-number">2.</span> <span class="toc-text">发布一篇文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地运行"><span class="toc-number">3.</span> <span class="toc-text">本地运行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo上传步骤"><span class="toc-number">4.</span> <span class="toc-text">Hexo上传步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传-常用标签"><span class="toc-number">5.</span> <span class="toc-text">上传 常用标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重装Git-或者系统后-解决"><span class="toc-number">6.</span> <span class="toc-text">重装Git 或者系统后 解决</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#git初始化配置"><span class="toc-number">1.</span> <span class="toc-text">git初始化配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssh秘钥设置"><span class="toc-number">1.1.</span> <span class="toc-text">ssh秘钥设置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git上传"><span class="toc-number">2.</span> <span class="toc-text">git上传</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-ignore文件模板"><span class="toc-number">3.</span> <span class="toc-text">git ignore文件模板</span></a></li></ol>
         
     </div>
     <style>
@@ -440,7 +401,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hexo简单实用（1）　| 马克图布！　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Git快速使用　| 马克图布！　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -459,8 +420,8 @@
     <div id="disqus_thread"></div>
     <script>
         var disqus_config = function(){
-            this.page.url = 'http://yoursite.com/2018/08/29/hexo上传流程/';
-            this.page.identifier = '2018/08/29/hexo上传流程/';
+            this.page.url = 'http://yoursite.com/2018/08/31/Git快速使用/';
+            this.page.identifier = '2018/08/31/Git快速使用/';
         };
         var loadComment = function(){
             var d = document, s = d.createElement('script');
@@ -482,15 +443,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/08/30/Oracle/" title="上一篇: Oracle入门（1）">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/08/29/spring/" title="下一篇: Spring框架入门（1）">
+            <a href="/2018/08/31/Git和Github详解/" title="下一篇: Git和GitHub详解">
                 <i class="fa fa-angle-right"></i>
             </a>
         

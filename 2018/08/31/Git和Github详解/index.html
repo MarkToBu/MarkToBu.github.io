@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Hide it away" />
+
+
+
+<meta name="description" content="Git和github详解。或点击：https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">
+<meta name="keywords" content="版本控制,Git,GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git和GitHub详解">
+<meta property="og:url" content="http://yoursite.com/2018/08/31/Git和Github详解/index.html">
+<meta property="og:site_name" content="马克图布！">
+<meta property="og:description" content="Git和github详解。或点击：https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-31T01:32:00.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git和GitHub详解">
+<meta name="twitter:description" content="Git和github详解。或点击：https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="马克图布！" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/silver/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Git和GitHub详解 | 马克图布！</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: 
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Hide it away</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/archives/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/随笔/">随笔</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:632318927@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="https://weibo.com/u/5317910567/home" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/TheBestLife" title="GitHub"></a>
+                            
+                                <a class="fa V2EX" href="https://www.v2ex.com/member/TwistedFate" title="V2EX"></a>
+                            
+                                <a class="fa 知乎" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa 网易云音乐" href="http://music.163.com/#/user/home?id=372823067" title="网易云音乐"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端-js/">-前端 -js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DB/">DB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/">Oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring框架/">spring框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具-Hbuilder/">工具  -Hbuilder</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常用数据库/">常用数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/应用-前端工具/">应用  前端工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/开源框架/">开源框架</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/流程/">流程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/版本控制/">版本控制</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">小白猿</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Hide it away</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Hide it away</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/随笔/">随笔</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:632318927@qq.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="https://weibo.com/u/5317910567/home" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/TheBestLife" title="GitHub"></a>
+                            
+                                <a class="fa V2EX" target="_blank" href="https://www.v2ex.com/member/TwistedFate" title="V2EX"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa 网易云音乐" target="_blank" href="http://music.163.com/#/user/home?id=372823067" title="网易云音乐"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Git和Github详解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/08/31/Git和Github详解/" class="article-date">
+      <time datetime="2018-08-31T01:32:00.000Z" itemprop="datePublished">2018-08-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git和GitHub详解
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/版本控制/">版本控制</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitHub/">GitHub</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制/">版本控制</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="GitHub-详解"><a href="#GitHub-详解" class="headerlink" title="GitHub  详解"></a>GitHub  详解</h1><h2 id="1-什么是-GitHub"><a href="#1-什么是-GitHub" class="headerlink" title="1. 什么是 GitHub"></a>1. 什么是 GitHub</h2><p><em>GitHub 是为开发者提供 Git 仓库的托管服务。这是一个让开发者与<br>朋友、同事、同学及陌生人共享代码的完美场所。</em></p>
+<p>== <strong>专栏：GitHub 与 Git 的区别<br>在此讲解一下 GitHub 与 Git的区别。<br>GitHub 与 Git 是完<br>全不同的两个东西。本书中，自始至终都以 GitHub 和 Git 的方<br>式区分描述。<br>在 Git 中，开发者将源代码存入名叫“Git 仓库”的资料库中<br>并加以使用。而 GitHub 则是在网络上提供 Git 仓库的一项服务。<br>也就是说，GitHub 上公开的软件源代码全都由 Git 进行管<br>理。理解 Git，是熟练运用 GitHub 的关键所在。Git 的相关知识，<br>我们将在第 2 章中为您详细讲解。</strong>  ==</p>
+<h3 id="使用-GitHub-会带来哪些变化"><a href="#使用-GitHub-会带来哪些变化" class="headerlink" title="使用 GitHub 会带来哪些变化"></a>使用 GitHub 会带来哪些变化</h3><pre><code>● 协作形式变化
+● 在开发者之间引发化学反应的 Pull Request
+● 对特定用户进行评论
+●文字输入功能的变革
+● 能看到更多其他团队的软件
+●  与开源软件相同的开发模式
+</code></pre><h3 id="关于社会化编程"><a href="#关于社会化编程" class="headerlink" title="关于社会化编程"></a>关于社会化编程</h3><pre><code>是软件开发方法的一种变革。任何人都可以更容易地获得源码，修改源码。为软件开发者的世界带来了真正意义上的“民主”，让所有人都平等地拥有了更改源代码的权利。
+</code></pre><h3 id="GitHub-提供的主要功能"><a href="#GitHub-提供的主要功能" class="headerlink" title="GitHub 提供的主要功能"></a>GitHub 提供的主要功能</h3><pre><code>● Git 仓库
+● Organization
+● Issue    [是将一个任务或问题分配给一个 Issue 进行追踪和管理的功能。]
+● Wiki [通过 Wiki 功能，任何人都能随时对一篇文章进行更改并保存，因此可以多人共同完      成一篇文章。该功能常用在开发文档或手册的编写中。]
+● Pull Request  [开发者向 GitHub 的仓库推送更改或功能添加后，可以通过 Pull
+  Request 功能向别人的仓库提出申请，请求对方合并。
+  Pull Request 送出后，目标仓库的管理者等人将能够查看 Pull
+  Request 的内容及其中包含的代码更改。
+  同时，GitHub 还提供了对 Pull Request 和源代码前后差别进行讨论
+  的功能。]
+</code></pre><h2 id="2-Git认识"><a href="#2-Git认识" class="headerlink" title="2. Git认识"></a>2. Git认识</h2><pre><code>Git 属于分散型版本管理系统，是为版本管理而设计的软件。
+</code></pre><h3 id="什么是版本管理"><a href="#什么是版本管理" class="headerlink" title="什么是版本管理"></a>什么是版本管理</h3><pre><code>版本管理就是管理更新的历史记录。它为我们提供了一些在软件开发过程中必不可少的功能，例如记录一款软件添加或更改源代码的过程，回滚到特定阶段，恢复误删除的文件等。
+</code></pre><h3 id="集中型与分散型"><a href="#集中型与分散型" class="headerlink" title="集中型与分散型"></a>集中型与分散型</h3><pre><code>* 集中型 * 将所有数据集中存放在服务器当中，有便于管理的优点。但
+是一旦开发者所处的环境不能连接服务器，就无法获取最新的源代码，
+开发也就几乎无法进行。服务器宕机时也是同样的道理，而且万一服务
+器故障导致数据消失，恐怕开发者就再也见不到最新的源代码了。
+ * 分散型 *  分散型拥有多个仓库，相对而言稍显复杂。不过，由于
+ 本地的开发环境中就有仓库，所以开发者不必连接远程仓库就可以进行
+ 开发。集中型和分散型双方都有优缺点，不过git的使用会占绝大多数。
+</code></pre><h3 id="Git安装和初始化设置"><a href="#Git安装和初始化设置" class="headerlink" title="Git安装和初始化设置"></a>Git安装和初始化设置</h3><pre><code>安装：下一步，默认即可
+</code></pre><hr>
+<h3 id="Git初始化设置"><a href="#Git初始化设置" class="headerlink" title="Git初始化设置"></a>Git初始化设置</h3><ol>
+<li>● 设置姓名和邮箱地址<br><code>$ git config --global user.name &quot;Firstname Lastname&quot;</code><br><code>$ git config --global user.email &quot;your_email@example.com&quot;</code></li>
+</ol>
+<p>   这个命令，会在“~/.gitconfig”中以如下形式输出设置文件。</p>
+<blockquote>
+<p> [user]<br>  name = Firstname Lastname<br>  email = your_email@example.com </p>
+</blockquote>
+<p>想更改这些信息时，可以直接编辑这个设置文件。这里设置的姓名<br>和邮箱地址会用在 Git 的提交日志中。由于在 GitHub 上公开仓库时，这<br>里的姓名和邮箱地址也会随着提交日志一同被公开</p>
+<pre><code>● 提高命令输出的可读性
+</code></pre><p>顺便一提，将 color.ui 设置为 auto 可以让命令的输出拥有更高的可<br>读性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global color.ui auto</span><br><span class="line"> </span><br><span class="line">“~/.gitconfig”中会增加下面一行。</span><br><span class="line">&gt; [color]</span><br><span class="line">&gt; ui = auto</span><br><span class="line"></span><br><span class="line">这样一来，各种命令的输出就会变得更容易分辨。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 使用GitHub的前期准备</span><br><span class="line"></span><br><span class="line">## 前期准备</span><br><span class="line">1.     创建账户</span><br><span class="line">2.     设置头像</span><br><span class="line">3.     设置SSH Key</span><br><span class="line">       [GitHub 上连接已有仓库时的认证，是通过使用了 SSH 的公开密钥</span><br><span class="line">		认证方式进行的。创建公开密钥认证所需的 SSH Key，并将其添加至 GitHub。] </span><br><span class="line">			创建方法：</span><br><span class="line">			运行下面的命令创建 SSH Key。</span><br></pre></td></tr></table></figure></p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;
+nerating public/private rsa key pair.
+ter file in which to save the key
+Users/your_user_directory/.ssh/id_rsa): 按回车键
+ter passphrase (empty for no passphrase): 输入密码
+ter same passphrase again: 再次输入密码
+
+ “your_email@example.com”的部分请改成您在创建账户时用的邮箱地址。密码需要在认证时输        入，请选择复杂度高并且容易记忆的组合。
+    输入密码后会出现以下结果。
+</code></pre><p>Your identification has been saved in /Users/your_user_directory/.ssh/id_rsa.<br>Your public key has been saved in /Users/your_user_directory/.ssh/id_rsa.pub.<br>The key fingerprint is:<br>fingerprint值 your_email@example.com<br>The key’s randomart image is:</p>
+<pre><code>+--[ RSA 2048]----+
+| .+ + |
+| = o O . |
+略
+</code></pre><p><em>id_rsa 文件是私有密钥，id_rsa.pub 是公开密钥。</em><br>● 添加公开密钥<br>GitHub 中添加公开密钥，今后就可以用私有密钥进行认证了。<br>点击右上角的账户设定按钮（Account Settings），选择 SSH Keys 菜<br>单。点击 Add SSH Key 之后，会出现如图 3.2 的输入框。在 Title 中输入<br>适当的密钥名称。Key 部分请粘贴 id_rsa.pub 文件里的内容。id_rsa.pub<br>的内容可以用如下方法查看。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br><span class="line">ssh-rsa 公开密钥的内容 your_email@example.com</span><br></pre></td></tr></table></figure></p>
+<p>添加成功之后，创建账户时所用的邮箱会接到一封提示“公共密钥添加完成”的邮件。<br>完成以上设置后，就可以用手中的私人密钥与 GitHub 进行认证和通信了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">The authenticity of host &apos;github.com (207.97.227.239)&apos; can&apos;t be established.</span><br><span class="line">RSA key fingerprint is fingerprint值 .</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? 输入yes</span><br></pre></td></tr></table></figure></p>
+<p>实际动手使用 　　出现如下结果即为成功。<br>Hi hirocastest! You’ve successfully authenticated, but GitHub does not<br>provide shell access.</p>
+<p>  ● 使用社区功能<br>     Follow别人：在创建账户后不妨试试<br>        Follow（关注）别人。在用户信息页面的右上角点击Follow 按钮即可。</p>
+<pre><code>这样一来，您所 Follow 的用户的活动就会显示在您的控制面板页面
+中。您可以通过这种方法知道那个人在 GitHub 上都做了些什么。
+对于仓库，也可以使用 Watch 功能获取最新的开发信息。如果您经
+常使用的某个软件正在 GitHub 上进行开发，不妨去 Watch 一下。
+</code></pre><h4 id="实际动手"><a href="#实际动手" class="headerlink" title="实际动手"></a>实际动手</h4><h5 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h5><pre><code>实际创建一个公开的仓库。点击右上角工具栏里的 New repository 
+ 图标，创建新的仓库。
+
+Repository name
+</code></pre><p>参考图 3.5，在 Repository name 栏中输入仓库的名称。这里我们输<br>入 Hello-World。<br> 设置=》》》》<br> Description<br>Description 栏中可以设置仓库的说明。这一栏不是必需项，可以留空。<br> Public、Private<br>在这一栏可以选择 Public 还是 Private。这里我们选择 Public，创建<br>公开仓库，仓库内的所有内容都会被公开。<br>选择 Private 可以创建非公开仓库，用户可以设置访问权限，但这项<br>服务是收费的。<br> Initialize this repository with a README<br>在 Initialize this repository with a README 选项上打钩，随后<br>GitHub 会自动初始化仓库并设置 README 文件，让用户可以立刻<br>clone 这个仓库。如果想向 GitHub 添加手中已有的 Git 仓库，建议不要<br>勾选，直接手动 push。<br> Add .gitignore<br>下方左侧的下拉菜单非常方便，通过它可以在初始化时自动生<br>成.gitignore文件<br>A 。这个设定会帮我们把不需要在Git仓库中进行版本管<br>理的文件记录在 .gitignore 文件中，省去了每次根据框架进行设置的麻<br>烦。下拉菜单中包含了主要的语言及框架，选择今后将要使用的即可。<br>由于本书中我们并不使用任何框架，所以不做选择。<br> Add a license<br>右侧的下拉菜单可以选择要添加的许可协议文件。如果这个仓库中<br>包含的代码已经确定了许可协议，那么请在这里进行选择。随后将自动<br>生成包含许可协议内容的 LICENSE 文件，用来表明该仓库内容的许可<br>协议。<br>输入选择都完成后，点击 Create repository 按钮，==完成仓库的创建==。</p>
+<p>● 连接仓库<br>下面这个 URL 便是刚刚创建的仓库的页面。<br><a href="https://github.com/用户名/Hello-Word" target="_blank" rel="noopener">https://github.com/用户名/Hello-Word</a></p>
+<p><strong>使用 GitHub 后，很多文档都需要用 Markdown 来书写。也就是说，<br>全世界有大量程序员都在使用 Markdown，因此掌握这种语法已经成为<br>程序员的标准技能之一。请各位也务必学会 Markdown 语法。</strong></p>
+<h5 id="clone-已有仓库"><a href="#clone-已有仓库" class="headerlink" title="clone 已有仓库"></a>clone 已有仓库</h5><p>接下来我们将尝试在已有仓库中添加代码并加以公开。首先将已有<br>仓库 clone 到身边的开发环境中。clone 时指定的路径 位于 仓库的右下角。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git clone git@github.com:hirocastest/Hello-World.git</span><br><span class="line">Cloning into &apos;Hello-World&apos;...</span><br><span class="line">remote: Counting objects: 3, done.</span><br><span class="line">remote: Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (3/3), done.</span><br><span class="line">$ cd Hello-World</span><br></pre></td></tr></table></figure></p>
+<p>这里会要求输入 GitHub 上设置的公开密钥的密码。认证成功后，<br>仓库便会被 clone 至仓库名后的目录中。将想要公开的代码提交至这个<br>仓库再 push 到 GitHub 的仓库中，代码便会被公开。<br>    在克隆的目录下新编写 代码，查看状态：<br>     $ git status<br>      On branch master<br>      Untracked files:<br>  (use “git add <file>…” to include in what will be committed)<br>  nothing added to commit but untracked files present (use “git add” to track)</file></p>
+<h5 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h5><p>将 hello_word.php 提交至仓库。这样一来，这个文件就进入了版本<br>管理系统的管理之下。今后的更改管理都交由 Git 进行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git add hello_world.php</span><br><span class="line">$ git commit -m &quot;Add hello world script by php&quot;</span><br><span class="line">[master d23b909] Add hello world script by php</span><br><span class="line">1 file changed, 3 insertions(+)</span><br><span class="line">create mode 100644 hello_world.php</span><br></pre></td></tr></table></figure></p>
+<p>通过 git add命令将文件加入暂存区<br>A ，再通过 git commit命令<br>提交。<br>添加成功后，可以通过 git log命令查看提交日志。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git log</span><br><span class="line">commit d23b909caad5d49a281480e6683ce3855087a5da</span><br><span class="line">Author: hirocastest &lt;hohtsuka@gmail.com&gt;</span><br><span class="line">Date: Tue May 1 14:36:58 2012 +0900</span><br><span class="line">Add hello world script by php</span><br></pre></td></tr></table></figure></p>
+<h5 id="进行-push"><a href="#进行-push" class="headerlink" title="进行 push"></a>进行 push</h5><p>之后只要执行 push，GitHub 上的仓库就会被更新。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br><span class="line">Counting objects: 4, done.</span><br><span class="line">Delta compression using up to 4 threads.</span><br><span class="line">Compressing objects: 100% (2/2), done.</span><br><span class="line">Writing objects: 100% (3/3), 328 bytes, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">To git@github.com:hirocastest/Hello-World.git</span><br><span class="line">46ff713..d23b909 master -&gt; master</span><br></pre></td></tr></table></figure></p>
+<p>这样一来代码就在 GitHub 上公开了。可以实际连接 <a href="http://github" target="_blank" rel="noopener">http://github</a>.<br>com/ 用户名 /Hello-World 查看一下。</p>
+<h2 id="3-Git-基本设置"><a href="#3-Git-基本设置" class="headerlink" title="3. Git 基本设置"></a>3. Git 基本设置</h2><pre><code>1. 配置用户名：  git config --global user.name &quot;name&quot;
+
+   2. 邮箱：              git config --global user.email &quot;...@...&quot;
+
+   3. 其他：              git config --global merge.tool &quot;kdiff3&quot;
+
+   ​                         #用来比较不同的插件，没有就不用装 
+
+   ​             git config --global core.autocrlf  false 
+
+   ​                        #让git不用管Windows/Unix换行符转换。      
+</code></pre><blockquote>
+<p>git编码设置</p>
+</blockquote>
+<p>​       git  config –global gui.encoding     utf-8   # 避免git gui的中文乱码</p>
+<p>​       git config –global core.quotepath  off       # 避免 git status 显示中文名字的乱码</p>
+<p>​    windows上，需要设置： git config  –global core.ignorcase false</p>
+<p>​     查看安装情况：  git –version</p>
+<h4 id="git-ssh-key-pair-配置"><a href="#git-ssh-key-pair-配置" class="headerlink" title="git ssh key pair 配置"></a>git ssh key pair 配置</h4><ol>
+<li>在Linux 的命令行下，或者window的Git Bash命令行窗口中键入： </li>
+</ol>
+<p>​            ssh-keygen -t rsa -C “632318927@qq.com”  </p>
+<p>​       一路回车，不输入任何密码，生成ssh key pair</p>
+<ol>
+<li><p>ssh -add ~/.ssh/id_rsa        如果保存，先=&gt;eval ‘ssh-agent’  ,最后用ssh -add -l查看</p>
+</li>
+<li><p>cat ~/.ssh/id_rsa.pub</p>
+<p>   复制内容</p>
+</li>
+<li><p>在web上配置ssh秘钥</p>
+</li>
+</ol>
+<p>查看安装情况：  git –version</p>
+<p>##4. Git 常用命令</p>
+<ol>
+<li>切换分支  git checkout 分支名</li>
+<li>拉取   git pull</li>
+<li>提交    git push</li>
+</ol>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><p>###git init——初始化仓库<br>要使用 Git 进行版本管理，必须先初始化仓库。Git 是使用 git<br>init命令进行初始化的。请实际建立一个目录并初始化仓库。<br>$ mkdir git-tutorial<br>$ cd git-tutorial<br>$ git init<br>Initialized empty Git repository in /Users/hirocaster/github/github-book<br>/git-tutorial/.git/<br>如果初始化成功，执行了 git init命令的目录下就会生成 .git 目<br>录。这个 .git 目录里存储着管理当前目录内容所需的仓库数据。<br>$ git status</p>
+<h3 id="On-branch-master"><a href="#On-branch-master" class="headerlink" title="On branch master"></a>On branch master</h3><h3 id="Initial-commit"><a href="#Initial-commit" class="headerlink" title="Initial commit"></a>Initial commit</h3><p>nothing to commit (create/copy files and use “git add” to track)</p>
+<p>###git status——查看仓库的状态</p>
+<p>git status命令用于显示 Git 仓库的状态。这是一个十分常用的命令，请务必牢记。</p>
+<p>工作树和仓库在被操作的过程中，状态会不断发生变化。在 Git 操<br>作过程中时常用 git status命令查看当前状态，可谓基本中的基本。<br>下面，就让我们来实际查看一下当前状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"># On branch master</span><br><span class="line">#</span><br><span class="line"># Initial commit</span><br><span class="line">#</span><br><span class="line">nothing to commit (create/copy files and use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
+<p>结果显示了我们当前正处于 master 分支下。关于分支我们会在不久<br>后讲到，现在不必深究。接着还显示了没有可提交的内容。所谓提交<br>（Commit），是指“记录工作树中所有文件的当前状态”。<br>尚没有可提交的内容，就是说当前我们建立的这个仓库中还没有记<br>录任何文件的任何状态。这里，我们建立 README.md 文件作为管理对<br>象，为第一次提交做前期准备。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ touch README.md</span><br><span class="line">$ git status</span><br><span class="line"># On branch master</span><br><span class="line">#</span><br><span class="line"># Initial commit</span><br><span class="line">## Untracked files:# (use &quot;git add &lt;file&gt;...&quot; to include in what will</span><br><span class="line">be committed)#</span><br><span class="line"># README.md</span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to</span><br><span class="line">track)</span><br></pre></td></tr></table></figure></p>
+<pre><code>可以看到在 Untracked files 中显示了 README.md 文件。类似地，
+只要对 Git 的工作树或仓库进行操作，git status命令的显示结果就
+会发生变化。
+</code></pre><h4 id="●-git-add——向暂存区中添加文件"><a href="#●-git-add——向暂存区中添加文件" class="headerlink" title="● git add——向暂存区中添加文件"></a>● git add——向暂存区中添加文件</h4><pre><code>如果只是用 Git 仓库的工作树创建了文件，那么该文件并不会被记
+入 Git 仓库的版本管理对象当中。因此我们用 git status命令查看
+README.md 文件时，它会显示在 Untracked files 里。
+要想让文件成为 Git 仓库的管理对象，就需要用 git add命令将其
+加入暂存区（Stage 或者 Index）中。暂存区是提交之前的一个临时区域。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git add README.md</span><br><span class="line">$ git status</span><br><span class="line"># On branch master</span><br><span class="line">	#</span><br><span class="line"># Initial commit</span><br><span class="line">#</span><br><span class="line"># Changes to be committed:</span><br><span class="line"># (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span><br><span class="line">#</span><br><span class="line"># new file: README.md</span><br><span class="line">#</span><br></pre></td></tr></table></figure>
+<pre><code>将 README.md 文件加入暂存区后，git status命令的显示结
+果发生了变化。可以看到，README.md 文件显示在 Changes to be
+committed 中了。
+</code></pre><h1 id="—在Git中如何撤销commit前的add操作？"><a href="#—在Git中如何撤销commit前的add操作？" class="headerlink" title="—在Git中如何撤销commit前的add操作？"></a>—在Git中如何撤销commit前的add操作？</h1><p><a href="https://link.jianshu.com/?t=http://stackoverflow.com/questions/348170/how-to-undo-git-add-before-commit" target="_blank" rel="noopener">http://stackoverflow.com/questions/348170/how-to-undo-git-add-before-commit</a></p>
+<h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><p>我错误的使用了下面的命令添加了文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add myfile.txt</span><br></pre></td></tr></table></figure>
+<p>现在我还没有运行<code>git commit</code>命令。有办法撤销它，从而不让这些文件包含到commit中吗？</p>
+<h2 id="高票答案1"><a href="#高票答案1" class="headerlink" title="高票答案1:"></a>高票答案1:</h2><p>你寻找的是这个：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached &lt;added_file_to_undo&gt;</span><br></pre></td></tr></table></figure>
+<p>原因:<br>当我是个新手的时候，我首先试了试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset .</span><br></pre></td></tr></table></figure>
+<p>（来撤销我整个的初始化添加），结果却只得到了这条（没那么）有用的信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: Failed to resolve &apos;HEAD&apos; as a valid ref.</span><br></pre></td></tr></table></figure>
+<p>（译者注：在<a href="https://link.jianshu.com/?t=https://git.kernel.org/cgit/git/git.git/tree/Documentation/RelNotes/1.8.2.txt#n179" target="_blank" rel="noopener">Git 1.8.2</a>中已经修正了此问题）</p>
+<p>看起来是因为HEAD指针在首次提交之前是不存在的。换句话说，你将会陷进和我一样的初学者问题中去，加入你的工作流和我差不多，那么就会发生以下事情：</p>
+<ol>
+<li>cd到你伟大的新项目目录下，想要试试Git这个新的热门的东西</li>
+<li><code>git init</code></li>
+<li><code>git add .</code></li>
+<li><code>git status</code><br>…一大波乱七八糟的提示滚了过去…<br>=&gt; 艹！我不想把那些玩意儿都添加进去！</li>
+<li>google一下关键字<code>undo git add</code><br>=&gt; 找到 Stack Overflow - 吼吼</li>
+<li><code>git reset .</code><br>=&gt; fatal: Failed to resolve ‘HEAD’ as a valid ref.</li>
+</ol>
+<p>貌似看起来在有人因为抗议这个没用的提示，在邮件列表中[记录了一个bug]。然后正确的解决方案（是的，我当做垃圾信息忽略了）就藏在git status命令输出的提示中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"># Changes to be committed:</span><br><span class="line">#   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>最终，我们的解决方案是使用<code>git rm --cached FILE</code>.</p>
+<p>但是有个别处的提醒需要告诉你：<code>git rm</code>会删除你工作区域的文件副本，除非你使用了<code>--cached</code>参数。这里是<code>git help rm</code>中提取出的信息：</p>
+<blockquote>
+<p><strong>–cached</strong> Use this option to unstage and remove paths only from the index. Working tree files, whether modified or not, will be left.</p>
+<p><strong>–cached</strong> 使用该选项来只从暂存区移除路径和状态信息。工作区文件，无论是否改动，将会保留。</p>
+</blockquote>
+<p>那我继续使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached .</span><br></pre></td></tr></table></figure>
+<p>来移除所有的东西，重新开始。没用，因为<code>add .</code>命令是递归的，所以<code>rm</code>命令需要<code>-r</code>参数来同样保证递归。唉…</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></table></figure>
+<p>好了，我们现在回到了刚开始的地方。下一次我要使用<code>-n</code>参数来做一次预演，看看什么将会被添加进去:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add -n .</span><br></pre></td></tr></table></figure>
+<p>以防万一，我把所有的东西压缩打包到一个安全的地方，毕竟谁也没法保证<code>git help rm</code>中关于<code>--cached</code>的描述是否100%可信（或者万一我漏掉了什么呢）。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/08/31/Git和Github详解/">Git和GitHub详解</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Hide it away</a></p>
+        <p><span>发布时间:</span>2018-08-31, 09:32:00</p>
+        <p><span>最后更新:</span>2018-08-31, 09:32:00</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/08/31/Git和Github详解/" title="Git和GitHub详解">http://yoursite.com/2018/08/31/Git和Github详解/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/31/Git和Github详解/　　作者: Hide it away" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2018/08/31/Git快速使用/">
+                    Git快速使用
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/08/30/Oracle/">
+                    Oracle入门（1）
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GitHub-详解"><span class="toc-number">1.</span> <span class="toc-text">GitHub  详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是-GitHub"><span class="toc-number">1.1.</span> <span class="toc-text">1. 什么是 GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-GitHub-会带来哪些变化"><span class="toc-number">1.1.1.</span> <span class="toc-text">使用 GitHub 会带来哪些变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于社会化编程"><span class="toc-number">1.1.2.</span> <span class="toc-text">关于社会化编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub-提供的主要功能"><span class="toc-number">1.1.3.</span> <span class="toc-text">GitHub 提供的主要功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Git认识"><span class="toc-number">1.2.</span> <span class="toc-text">2. Git认识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是版本管理"><span class="toc-number">1.2.1.</span> <span class="toc-text">什么是版本管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集中型与分散型"><span class="toc-number">1.2.2.</span> <span class="toc-text">集中型与分散型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git安装和初始化设置"><span class="toc-number">1.2.3.</span> <span class="toc-text">Git安装和初始化设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git初始化设置"><span class="toc-number">1.2.4.</span> <span class="toc-text">Git初始化设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实际动手"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">实际动手</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建仓库"><span class="toc-number">1.2.4.1.1.</span> <span class="toc-text">创建仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#clone-已有仓库"><span class="toc-number">1.2.4.1.2.</span> <span class="toc-text">clone 已有仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#提交"><span class="toc-number">1.2.4.1.3.</span> <span class="toc-text">提交</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进行-push"><span class="toc-number">1.2.4.1.4.</span> <span class="toc-text">进行 push</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Git-基本设置"><span class="toc-number">1.3.</span> <span class="toc-text">3. Git 基本设置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-ssh-key-pair-配置"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">git ssh key pair 配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">1.3.1.</span> <span class="toc-text">基本操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#On-branch-master"><span class="toc-number">1.3.2.</span> <span class="toc-text">On branch master</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Initial-commit"><span class="toc-number">1.3.3.</span> <span class="toc-text">Initial commit</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#●-git-add——向暂存区中添加文件"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">● git add——向暂存区中添加文件</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#—在Git中如何撤销commit前的add操作？"><span class="toc-number">2.</span> <span class="toc-text">—在Git中如何撤销commit前的add操作？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题："><span class="toc-number">2.1.</span> <span class="toc-text">问题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高票答案1"><span class="toc-number">2.2.</span> <span class="toc-text">高票答案1:</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-4 i,
+        .toc-level-4 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"true"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Git和GitHub详解　| 马克图布！　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://yoursite.com/2018/08/31/Git和Github详解/';
+            this.page.identifier = '2018/08/31/Git和Github详解/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/08/31/Git快速使用/" title="上一篇: Git快速使用">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/08/30/Oracle/" title="下一篇: Oracle入门（1）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/08/31/Git快速使用/">Git快速使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/31/Git和Github详解/">Git和GitHub详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/30/Oracle/">Oracle入门（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/29/hexo上传流程/">Hexo简单实用（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/29/spring/">Spring框架入门（1）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/08/22/h5/">h5</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/MySQL笔记/">MySQL极简</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/markdown语法/">markdown 语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/JavaScript标记/">前端 简单笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/hexo和yelee主题使用/">hexo和yelee主题的使用笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/Hbuilder使用技巧/">Hbuilder使用技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/06/10/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2017-2018 Hide it away
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+    <script src="/js/GithubRepoWidget.js"></script>
+
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 4;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+             github: ".github-widget a", 
+            
+            
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
